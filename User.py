@@ -26,3 +26,9 @@ def save_user(self):
             '''
             User.listOfUser.append(self)  
             
+def delete_user(self):
+        '''
+        method deletes a saved user from the user list.
+        '''
+
+        User.listOfUser.remove(self)
