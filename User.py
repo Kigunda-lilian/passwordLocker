@@ -19,3 +19,10 @@ def __init__(self,first_name,last_name,password,email):
         self.last_name = last_name
         self.password = password
         self.email = email
+        
+def save_user(self):
+            '''
+            function to add a new user to the  listofUser array
+            '''
+            User.listOfUser.append(self)  
+            
