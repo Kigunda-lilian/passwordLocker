@@ -35,6 +35,8 @@ class TestUser(unittest.TestCase):
         self.new_User.save_User() # saving the new User
         self.assertEqual(len(User.listOfUser),1)
         
+        # tearDown() method helps us get accurate test results every time a new test case.
+        
         def tearDown(self):
             '''
         tearDown function that does clean up after each test case has run.
@@ -51,5 +53,41 @@ class TestUser(unittest.TestCase):
         self.new_User.save_User()
         test_User = User("Elijah", "Mutie", "acapulco#26","ellytie@gmail.com")
         test_User.save_User()
-        self.assertEqual(len(User.listOfUsert), 2)
+        self.assertEqual(len(User.listOfUser), 2)
 
+#feature to delete Users
+
+def test_delete_User(self):
+        '''
+        to test if we can remove a user from our user list.
+        '''
+        self.new_user.save_User()
+        test_User = User("Elijah", "Mutie", "acapulco#26","ellytie@gmail.com")
+        test_User.save_User()
+
+        self.new_User.delete_User() #deleting a user object
+        self.assertEqual(len(User.listOfUser), 1)
+        
+        
+        def test_find_User_by_first_name(self):
+            '''
+        to check if we can find a user by their first_name
+        '''
+        self.new_User.save_User()
+        test_User = User("Elijah", "Mutie", "acapulco#26","ellytie@gmail.com")
+        test_User.save_User()
+
+        found_User = User.find_by_first_name("Elijah")
+        self.assertEqual(found_User.first_name, test_User.first_name)
+        
+        
+        def test_User_exists(self):
+            '''
+        test to  return a boolean if the account exists or not.
+        '''
+        self.new_User.save_User()
+        test_User = User("Elijah", "Mutie", "acapulco#26","ellytie@gmail.com")
+        test_User.save_User()
+
+        User_exists = User.User_exists("Elijah")
+        self.assertTrue(User_exists)
