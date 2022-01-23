@@ -98,3 +98,7 @@ def test_delete_User(self):
         method that returns a list of all users saved.
         '''
         self.assertEqual(User.display_Users(), User.listOfUser)
+        
+        
+if __name__ == '__main__':
+    unittest.main()       
