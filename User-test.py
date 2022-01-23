@@ -7,6 +7,7 @@ class TestUser(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
+    # test if our objects are being instantiated correctly.
     
     def setUp(self):
         '''
@@ -24,6 +25,8 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_User.password,"kenjwdn34@b")
         self.assertEqual(self.new_User.email,"liliankanana.com")
         
+        # test if our users are being saved.
+        
         def test_save_User(self):
             '''
         test_save_User test case to test if the user object is saved into
@@ -31,4 +34,14 @@ class TestUser(unittest.TestCase):
         '''
         self.new_User.save_User() # saving the new User
         self.assertEqual(len(User.listOfUser),1)
+        
+        def test_save_multiple_User(self):
+            '''
+        test_save_multiple_User to check if we can save multiple User
+            objects to our listOfUser
+        '''
+        self.new_User.save_User()
+        test_User = User("Elijah", "Mutie", "acapulco#26","ellytie@gmail.com")
+        test_User.save_User()
+        self.assertEqual(len(User.listOfUsert), 2)
 

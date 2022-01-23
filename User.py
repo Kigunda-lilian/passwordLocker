@@ -32,3 +32,5 @@ def delete_user(self):
         '''
 
         User.listOfUser.remove(self)
+        
+        
