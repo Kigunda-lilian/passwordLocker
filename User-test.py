@@ -71,7 +71,7 @@ def test_delete_User(self):
         
         def test_find_User_by_first_name(self):
             '''
-        to check if we can find a user by their first_name
+        to  find a user by their first_name
         '''
         self.new_User.save_User()
         test_User = User("Elijah", "Mutie", "acapulco#26","ellytie@gmail.com")
@@ -91,3 +91,10 @@ def test_delete_User(self):
 
         User_exists = User.User_exists("Elijah")
         self.assertTrue(User_exists)
+        
+        
+        def test_display_all_Users(self):
+            '''
+        method that returns a list of all users saved.
+        '''
+        self.assertEqual(User.display_Users(), User.listOfUser)
