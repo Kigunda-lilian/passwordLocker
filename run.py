@@ -59,7 +59,7 @@ def main():
     print("\n")
     
     while True:
-            print("Use these numbers to choose an option:\n 1. Create an account \n 2. Display available users \n 3. Login to your account \n 5. sign out")
+            print("Use these numbers to choose an option:\n 1. Create an account \n 2. Display available users \n 3. Login to your account \n 4. sign out")
             print("\n")
             
             decision = int(input())
@@ -80,7 +80,43 @@ def main():
                  email = input()
 
 
-                 save_User(create_User(first_name,last_name,password,e_address)) # create and save new contact.
+                 save_User(create_User(first_name,last_name,password,email)) # create and save new contact.
                  print ('\n')
                  print(f"{first_name}, your account has been successfully created.")
                  print ('\n')
+                 
+            elif decision == 2:
+    
+                if display_all_users():
+                   print("Here is a list of all your contacts")
+                   print('\n')
+
+                   for User in display_all_users():
+                         print(f"{User.first_name} {User.last_name} .....{User.email}")
+
+                         print('\n')
+            else:
+                print('\n')
+                print("You dont seem to have any contacts saved yet")
+                print('\n')
+                
+            elif decision == 3:
+                print("Enter your firstname")
+                first_name = input()
+                print("Enter your password")
+                password = input()
+                print("\n")
+                
+                account = User(email)
+
+            if account:
+                print(f"Hi {email}, welcome back to password locker.")
+                print("\n")
+            
+                
+                
+            elif decision == 4:
+                print("Bye .......")
+                
+            else:
+                print("I really didn't get that. Please use the short codes")    
