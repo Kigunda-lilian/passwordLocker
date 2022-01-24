@@ -89,7 +89,7 @@ def test_delete_User(self):
         test_User = User("Elijah", "Mutie", "acapulco#26","ellytie@gmail.com")
         test_User.save_User()
 
-        User_exists = User.User_exists("Elijah")
+        User_exists = User.User_exists("ellytie@gmail.com")
         self.assertTrue(User_exists)
         
         
