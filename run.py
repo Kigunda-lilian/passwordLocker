@@ -33,3 +33,20 @@ def check_existing_User(email):
     method that checks if a user exists from the  listOfUsers.
     '''
         return User.User_exists(email)   
+    
+def create_user_details(profile, password):
+    
+    details = Credential( profile, password)
+    return details
+
+def save_user_details(details):
+    '''
+    function to save user info
+    '''
+    return Credential.save_profile(details)
+
+def display_all_users():
+    '''
+    function to display all users
+    '''
+    return User.display_profile()
